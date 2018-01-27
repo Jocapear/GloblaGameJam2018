@@ -9,7 +9,7 @@ public class BulletScript : MonoBehaviour {
 	void Start(){
 		Destroy(gameObject,destroyTime);
 	}
-	void OnCollisionEnter(Collision c){
+	void OnTriggerEnter(Collider c){
 		if (c.gameObject.tag != "MainCamera"){
 			Destroy(gameObject);
 		}

@@ -35,7 +35,10 @@ public class HerpesBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         navigation.SetDestination(player.transform.position);
-	}
+
+        AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+        Debug.Log(currentState.ToString());
+    }
 
     IEnumerator PutMine()
     {
