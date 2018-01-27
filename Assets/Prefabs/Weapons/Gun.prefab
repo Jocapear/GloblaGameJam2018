@@ -86,7 +86,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5a874df9979c9c64f8155cf29fe22d62, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,4 +139,4 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4749113134089166}
   bullet: {fileID: 1194443537816720, guid: 14ce517d8b908ff4f942aee8d9744f3b, type: 2}
   firePower: 50
-  fpsCam: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  fpsCam: {fileID: 0}

@@ -17,7 +17,5 @@ public class BulletScript : MonoBehaviour {
 		if (target != null){
 			target.TakeDamage(damage);
 		}
-
-		
 	}
 }
