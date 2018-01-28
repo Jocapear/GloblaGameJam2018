@@ -1516,7 +1516,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1075817125549414}
   m_LocalRotation: {x: -0, y: 0.6612002, z: -0, w: 0.7502095}
-  m_LocalPosition: {x: -31.710556, y: 0, z: 113.45877}
+  m_LocalPosition: {x: -27.5943, y: 0, z: 107.69592}
   m_LocalScale: {x: 101.12821, y: 101.12813, z: 101.12817}
   m_Children:
   - {fileID: 4057224905560836}
@@ -2116,12 +2116,11 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0e7aea7db7c76ce4a9a7f52734801b4b, type: 3}
+  - {fileID: 2100000, guid: 4dbf0a999ebdeaf40aec2798ca702c39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2132,7 +2131,6 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
