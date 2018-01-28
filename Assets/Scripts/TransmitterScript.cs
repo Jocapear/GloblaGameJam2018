@@ -26,13 +26,21 @@ public class TransmitterScript : MonoBehaviour {
 	}
 
 	void Shoot(bool signal){
+        RaycastHit hit;
+
 		if(signal){
 			newBullet = Instantiate (bullet0, bulletSpawn.position, bulletSpawn.rotation) as GameObject;
 		}
 		else{
 			newBullet = Instantiate (bullet1, bulletSpawn.position, bulletSpawn.rotation) as GameObject;
 		}
-		newBullet.GetComponent<Rigidbody>().velocity = fpsCam.transform.forward * firePower;
+
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 100000.0f))
+        {
+            newBullet.GetComponent<Rigidbody>().velocity = Vector3.Normalize(hit.point - bulletSpawn.transform.position) * firePower;
+        }
+        else
+            newBullet.GetComponent<Rigidbody>().velocity = fpsCam.transform.forward * firePower;
 		
 	}
 }
