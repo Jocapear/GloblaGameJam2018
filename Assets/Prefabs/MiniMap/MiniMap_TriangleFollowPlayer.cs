@@ -11,7 +11,7 @@ public class MiniMap_TriangleFollowPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Vector3 targetPostition = new Vector3( 0, this.transform.position.y,0 );
-		//transform.LookAt(targetPostition );
+		Vector3 targetPostition = new Vector3( 0, this.transform.position.y,0 );
+		transform.LookAt(targetPostition );
 	}
 }
