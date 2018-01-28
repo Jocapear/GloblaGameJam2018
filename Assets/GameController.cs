@@ -12,10 +12,8 @@ public class GameController : MonoBehaviour
     public GameObject[] dispensers;
     public GameObject player;
     public int playersLife;
-<<<<<<< HEAD
+
     public Slider playerHP;
-=======
->>>>>>> efa1a7fd08fcc0ca1c50385cee00c2d46c6344de
     public int enemiesAlive;
 
     public int ammo1;
