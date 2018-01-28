@@ -44,7 +44,7 @@ public class DispenserScript : MonoBehaviour {
         myDictionary.Add (25, new bool[4] {false,true,false,false} );
         myDictionary.Add (26, new bool[4] {false,false,true,true} );
 
-		code = new bool [Random.Range(1,4)][];
+		code = new bool [Random.Range(1,6)][];
 		word = "";
 		FillCode();
 	}
@@ -74,11 +74,17 @@ public class DispenserScript : MonoBehaviour {
 		if(code[currentCount][currentLetter] == signal){
 			currentLetter++;
 			if (currentLetter >= code[currentCount].Length){
+
 				currentCount += 1;
 				currentLetter = 0;
-			}
+                eraseLetter();
+                text.GetComponent<DispenserTextScript>().SetText(word);
+            }
 			if (currentCount >= code.Length){
-				Debug.Log("Vida, dinero, cosas");
+				//Diayma
+
+
+
                 GameObject particle = Instantiate(explotion);
                 particle.transform.position = text.transform.position;
 				currentCount = 0;
@@ -148,6 +154,19 @@ public class DispenserScript : MonoBehaviour {
 			return ("Z");
 		
 	}
+
+    void eraseLetter()
+    {
+        string temp = word;
+        word = "";
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (i != 0)
+            {
+                word += temp[i];
+            }
+        }
+    }
 
 
 }
