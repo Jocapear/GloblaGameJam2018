@@ -11,12 +11,13 @@ public class GameController : MonoBehaviour
     public GameObject[] dispensers;
     public GameObject player;
     public int playersLife;
+    public int enemiesAlive;
 
     public int ammo1;
     public int ammo2;
     private int level;
     private int numEnemies;
-    private int enemiesAlive;
+    
     private GameObject[] enemies;
 
     // Use this for initialization
