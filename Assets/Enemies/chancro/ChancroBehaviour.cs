@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChancroBehaviour : MonoBehaviour {
+public class ClamidiaBehaviour : MonoBehaviour {
 
     public Animator anim;
     public float defaultSpeed;
