@@ -82,7 +82,6 @@ public class GameController : MonoBehaviour
             //Debug.Log("Spawner is: " + randomNumber);
             enemies[i] = Instantiate(availableEnemies[Random.Range(0,2)], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
             yield return new WaitForSeconds(2);
-
         }
 
         }
