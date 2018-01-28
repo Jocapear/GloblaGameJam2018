@@ -5,7 +5,9 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour {
 	public float damage;
 	public float destroyTime;
+    AudioSource shoot;
 
+   
 	void Start(){
 		Destroy(gameObject,destroyTime);
 	}

@@ -10,9 +10,16 @@ public class GunScript : MonoBehaviour {
 
     GameController gc;
 
+    AudioSource shoot;
 
 	public Camera fpsCam;
-	void Start()
+
+    void Awake()
+    {
+        shoot = gameObject.GetComponent<AudioSource>();
+    }
+
+    void Start()
     {
         gc = GameObject.Find("EscenarioGGJ_2018_07").GetComponent<GameController>();
     }
