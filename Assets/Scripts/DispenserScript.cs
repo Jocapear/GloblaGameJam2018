@@ -15,11 +15,9 @@ public class DispenserScript : MonoBehaviour {
 	int currentCount,currentLetter;
 	string word;
 	public GameObject text, explotion;
-    ParticleSystem particle;
+
 	// Use this for initialization
 	void Start () {
-        particle = explotion.GetComponent<ParticleSystem>();
-        particle.Stop();
 		myDictionary.Add (1, new bool[2] {true,false} );
         myDictionary.Add (2, new bool[4] {false,true,true,true} );
         myDictionary.Add (3, new bool[4] {false,true,false,true} );
@@ -47,7 +45,7 @@ public class DispenserScript : MonoBehaviour {
         myDictionary.Add (25, new bool[4] {false,true,false,false} );
         myDictionary.Add (26, new bool[4] {false,false,true,true} );
 
-		code = new bool [Random.Range(1,4)][];
+		code = new bool [Random.Range(1,6)][];
 		word = "";
 		FillCode();
 	}
@@ -57,7 +55,9 @@ public class DispenserScript : MonoBehaviour {
 		
 	}
 
-	void OnColissionEnter(Collision c){
+	void OnColissionEnter(Collision c)
+    {
+
 
 	}
 
@@ -77,14 +77,19 @@ public class DispenserScript : MonoBehaviour {
 		if(code[currentCount][currentLetter] == signal){
 			currentLetter++;
 			if (currentLetter >= code[currentCount].Length){
+
 				currentCount += 1;
 				currentLetter = 0;
-			}
+                eraseLetter();
+                text.GetComponent<DispenserTextScript>().SetText(word);
+            }
 			if (currentCount >= code.Length){
-				Debug.Log("Vida, dinero, cosas");
-                particle.Emit(200);
+
+                GameObject particle = Instantiate(explotion);
+                particle.transform.position = text.transform.position;
 				currentCount = 0;
                 Destroy(gameObject);
+                Destroy(particle, 3.0f);
 			}
 		}
 		else{
@@ -149,6 +154,19 @@ public class DispenserScript : MonoBehaviour {
 			return ("Z");
 		
 	}
+
+    void eraseLetter()
+    {
+        string temp = word;
+        word = "";
+        for (int i = 0; i < temp.Length; i++)
+        {
+            if (i != 0)
+            {
+                word += temp[i];
+            }
+        }
+    }
 
 
 }

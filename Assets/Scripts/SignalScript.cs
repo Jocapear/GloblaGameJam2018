@@ -10,13 +10,15 @@ public class SignalScript : MonoBehaviour {
 		Destroy(gameObject,destroyTime);
 	}
 	void OnCollisionEnter(Collision c){
-		if (c.gameObject.tag != "MainCamera"){
+        DispenserScript target = c.transform.GetComponent<DispenserScript>();
+        if (target != null)
+        {
+            target.EnterSignal(signalType);
+        }
+        if (c.gameObject.tag != "MainCamera"){
 			Destroy(gameObject);
 		}
-		DispenserScript target = c.transform.GetComponent<DispenserScript>();
-		if (target != null){
-			target.EnterSignal(signalType);
-		}
+		
 
 		
 	}
