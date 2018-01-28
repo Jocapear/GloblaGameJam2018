@@ -13,12 +13,13 @@ public class GameController : MonoBehaviour
     public GameObject player;
     public int playersLife;
     public Slider playerHP;
+    public int enemiesAlive;
 
     public int ammo1;
     public int ammo2;
     private int level;
     private int numEnemies;
-    private int enemiesAlive;
+    
     private GameObject[] enemies;
 
     // Use this for initialization
