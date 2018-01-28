@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameObject[] dispensers;
     public GameObject player;
     public int playersLife;
+    public Slider playerHP;
 
     public int ammo1;
     public int ammo2;
@@ -28,10 +30,15 @@ public class GameController : MonoBehaviour
         enemiesAlive = 3;
         enemies = new GameObject[numEnemies];
         StartCoroutine(CreateEnemies());
-	}
+
+        playerHP.maxValue = 200;
+        playersLife = 200;
+
+}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		if (enemiesAlive <= 0)
         {
             LevelUp();
@@ -45,10 +52,11 @@ public class GameController : MonoBehaviour
                 Destroy(enemies[i]);
             }
             //Destroy(player);
-            Destroy(gameObject);
-            
+            Destroy(gameObject);           
 
         }
+        playerHP.value = playersLife;
+       
 	}
 
     public void EnemyDead()

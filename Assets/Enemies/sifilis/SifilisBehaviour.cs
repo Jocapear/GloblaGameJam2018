@@ -38,7 +38,7 @@ public class SifilisBehaviour : MonoBehaviour {
 
     void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.layer == 11)
+        if (c.gameObject.layer == 11)//Its player
         {
             gc.playersLife -= 20;
             Destroy(gameObject);
