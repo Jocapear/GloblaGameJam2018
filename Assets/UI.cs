@@ -14,7 +14,6 @@ public class UI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        healthText.text = "HP: " + gc.playersLife;
         ammoText.text = "Ammo " + gc.ammo1;
 	}
 }
