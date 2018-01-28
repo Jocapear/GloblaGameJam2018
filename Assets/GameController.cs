@@ -39,6 +39,14 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("----------------GAME OVER----------------");
             SceneManager.LoadScene("GameOverScreen", LoadSceneMode.Additive);
+            for (int i = 0; i  < enemies.Length; i++)
+            {
+                Destroy(enemies[i]);
+            }
+            //Destroy(player);
+            Destroy(gameObject);
+            
+
         }
 	}
 
