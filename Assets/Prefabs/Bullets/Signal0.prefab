@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23759428846367762}
   - component: {fileID: 54141804288482528}
   - component: {fileID: 114692220437685316}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Signal0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1020642663413656}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

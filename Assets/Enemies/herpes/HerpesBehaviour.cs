@@ -7,7 +7,7 @@ public class HerpesBehaviour : MonoBehaviour {
     public Animator anim;
     public float defaultSpeed;
     public double attackDistance;
-    public GameObject player;
+   
     public GameObject mine;
 
     private Transform enemyModel;
@@ -15,9 +15,11 @@ public class HerpesBehaviour : MonoBehaviour {
     private AudioSource source;
     private UnityEngine.AI.NavMeshAgent navigation;
     private Transform minePivot;
+    private GameObject player;
 
     void Awake()
     {
+        player = GameObject.Find("Player");
         source = GetComponent<AudioSource>();
         enemyModel = transform.GetChild(0);
         minePivot = transform.GetChild(1);
@@ -37,14 +39,19 @@ public class HerpesBehaviour : MonoBehaviour {
         navigation.SetDestination(player.transform.position);
 
         AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
-        Debug.Log(currentState.ToString());
+        Debug.Log(Vector3.Distance(player.transform.position, gameObject.transform.position));
     }
 
     IEnumerator PutMine()
     {
         while (true)
         {
-            Instantiate(mine, minePivot.position, minePivot.rotation);
+            yield return new WaitForSeconds(1);
+            if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= attackDistance)
+            {
+                Instantiate(mine, minePivot.position, minePivot.rotation);
+            }
+            
             yield return new WaitForSeconds(3);
         }
     }

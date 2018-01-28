@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33331770486803998}
   - component: {fileID: 23415320227589752}
   - component: {fileID: 135061958431322864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HerpesMine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1959246688100084}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.1
