@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public GameObject[] availableEnemies;
     public GameObject[] spawners;
@@ -69,6 +70,9 @@ public class GameController : MonoBehaviour {
             //Debug.Log("Spawner is: " + randomNumber);
             enemies[i] = Instantiate(availableEnemies[Random.RandomRange(0,2)], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
             yield return new WaitForSeconds(2);
+
+        }
+
         }
     }
-}
+

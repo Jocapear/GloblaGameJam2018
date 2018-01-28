@@ -54,7 +54,9 @@ public class DispenserScript : MonoBehaviour {
 		
 	}
 
-	void OnColissionEnter(Collision c){
+	void OnColissionEnter(Collision c)
+    {
+
 
 	}
 
