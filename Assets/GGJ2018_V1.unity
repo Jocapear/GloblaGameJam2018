@@ -446,6 +446,11 @@ Prefab:
       propertyPath: m_Name
       value: ATM_Dispenser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114089464842204490, guid: b6f597981d69eaa4fa96ab8d95fd871b,
+        type: 2}
+      propertyPath: ammoType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6f597981d69eaa4fa96ab8d95fd871b, type: 2}
   m_IsPrefabParent: 0
@@ -2861,6 +2866,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4551087660705848, guid: b6f597981d69eaa4fa96ab8d95fd871b, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089464842204490, guid: b6f597981d69eaa4fa96ab8d95fd871b,
+        type: 2}
+      propertyPath: ammoType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
