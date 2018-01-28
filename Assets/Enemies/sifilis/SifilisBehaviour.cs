@@ -41,6 +41,7 @@ public class SifilisBehaviour : MonoBehaviour {
         if (c.gameObject.layer == 11)
         {
             gc.playersLife -= 20;
+            gc.enemiesAlive--;
             Destroy(gameObject);
         }
     }
