@@ -15,6 +15,7 @@ public class DispenserScript : MonoBehaviour {
 	int currentCount,currentLetter;
 	string word;
 	public GameObject text, explotion;
+
 	// Use this for initialization
 	void Start () {
 		myDictionary.Add (1, new bool[2] {true,false} );
@@ -83,9 +84,6 @@ public class DispenserScript : MonoBehaviour {
                 text.GetComponent<DispenserTextScript>().SetText(word);
             }
 			if (currentCount >= code.Length){
-				//Diayma
-
-
 
                 GameObject particle = Instantiate(explotion);
                 particle.transform.position = text.transform.position;
