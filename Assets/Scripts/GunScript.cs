@@ -10,9 +10,16 @@ public class GunScript : MonoBehaviour {
 
     GameController gc;
 
+    AudioSource shoot;
 
 	public Camera fpsCam;
-	void Start()
+
+    void Awake()
+    {
+        shoot = gameObject.GetComponent<AudioSource>();
+    }
+
+    void Start()
     {
         gc = GameObject.Find("EscenarioGGJ_2018_07").GetComponent<GameController>();
     }
@@ -24,13 +31,19 @@ public class GunScript : MonoBehaviour {
 	}
 
 	void Shoot(){
-		
-		if (gc.ammo1 > 0){
-			//bulletSpawn.rotation = Quaternion.LookRotation(hit.point-bulletSpawn.position);
-			//Vector3.Normalize(hit.point-bulletSpawn.position)
+        RaycastHit hit;
+
+        if (gc.ammo1 > 0){
+            
 			GameObject newBullet = Instantiate (bullet, bulletSpawn.position, bulletSpawn.rotation ) as GameObject;
-			newBullet.GetComponent<Rigidbody>().velocity =  fpsCam.transform.forward * firePower;
-			gc.ammo1 -= 1;
+            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 100000.0f))
+            {
+                newBullet.GetComponent<Rigidbody>().velocity = Vector3.Normalize(hit.point - bulletSpawn.transform.position) * firePower;
+            }
+            else
+                newBullet.GetComponent<Rigidbody>().velocity = fpsCam.transform.forward * firePower;
+
+            gc.ammo1 -= 1;
 		}
 		
 		
