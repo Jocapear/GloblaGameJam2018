@@ -84,6 +84,7 @@ public class DispenserScript : MonoBehaviour {
 				Debug.Log("Vida, dinero, cosas");
                 particle.Emit(200);
 				currentCount = 0;
+                Destroy(gameObject);
 			}
 		}
 		else{
