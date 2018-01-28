@@ -519,6 +519,34 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300008, guid: 9217f8f706f4d7243932d69014175f02, type: 3}
+--- !u!1 &902927492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 902927493}
+  m_Layer: 0
+  m_Name: Spawn (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &902927493
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902927492}
+  m_LocalRotation: {x: -0, y: 0.6612002, z: -0, w: 0.7502095}
+  m_LocalPosition: {x: -7.94, y: 1.07, z: -15.08}
+  m_LocalScale: {x: 171.25435, y: 171.25433, z: 171.25436}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907157025 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 9217f8f706f4d7243932d69014175f02, type: 3}
@@ -622,34 +650,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300010, guid: 9217f8f706f4d7243932d69014175f02, type: 3}
---- !u!1 &1021696768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1021696769}
-  m_Layer: 0
-  m_Name: Spawn (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1021696769
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1021696768}
-  m_LocalRotation: {x: -0, y: 0.6612002, z: -0, w: 0.7502095}
-  m_LocalPosition: {x: -3.4, y: 1.07, z: -16.8}
-  m_LocalScale: {x: 171.25435, y: 171.25433, z: 171.25436}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028533525 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100020, guid: 9217f8f706f4d7243932d69014175f02, type: 3}
@@ -770,12 +770,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableEnemies:
-  - {fileID: 1423814374343794, guid: c7c1772bb4182354e946d1c355c2da3e, type: 2}
+  - {fileID: 1422125329254416, guid: c7c1772bb4182354e946d1c355c2da3e, type: 2}
   spawners:
   - {fileID: 565678920}
   - {fileID: 461525774}
   - {fileID: 1952618594}
-  - {fileID: 1021696768}
+  - {fileID: 902927492}
   player: {fileID: 1285530348}
 --- !u!1 &1226113981
 GameObject:

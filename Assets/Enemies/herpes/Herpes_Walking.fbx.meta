@@ -99,7 +99,7 @@ ModelImporter:
     4300008: Group16068
     4300010: Group16580
     4300012: Group16325
-    7400000: Take 001
+    7400000: HerpesWalking
     9500000: //RootNode
     13700000: Group15812
     13700002: Group16068
@@ -136,7 +136,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: HerpesWalking
       takeName: Take 001
       firstFrame: 0
       lastFrame: 45
