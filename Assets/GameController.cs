@@ -48,21 +48,22 @@ public class GameController : MonoBehaviour
     private void LevelUp()
     {
         level++;
-        StartCoroutine(RestTime());
         numEnemies = 2*level;
+        enemiesAlive = numEnemies;
         Debug.Log("Level UP: " + level);
-        StartCoroutine(CreateEnemies());
+        StartCoroutine(RestTime());
+
     }
 
     IEnumerator RestTime()
     {
         yield return new WaitForSeconds(10);
+        StartCoroutine(CreateEnemies());
     }
 
     IEnumerator CreateEnemies()
     {
         Debug.Log(numEnemies + " will respawn");
-        enemiesAlive = numEnemies;
         for (int i = 0; i < numEnemies; i++)
         {
             enemies = new GameObject[numEnemies];

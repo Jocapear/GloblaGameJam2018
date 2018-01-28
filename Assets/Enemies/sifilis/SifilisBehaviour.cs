@@ -13,12 +13,14 @@ public class SifilisBehaviour : MonoBehaviour {
     private AudioSource source;
     private UnityEngine.AI.NavMeshAgent navigation;
     private GameObject player;
+    private GameController gc;
 
     void Awake()
     {
         source = GetComponent<AudioSource>();
         enemyModel = transform.GetChild(0);
         player = GameObject.Find("Player");
+        gc = GameObject.Find("EscenarioGGJ_2018_07").GetComponent<GameController>();
     }
 
     // Use this for initialization
@@ -33,4 +35,13 @@ public class SifilisBehaviour : MonoBehaviour {
 	void Update () {
         navigation.SetDestination(player.transform.position);
 	}
+
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.gameObject.layer == 11)
+        {
+            gc.playersLife -= 20;
+            Destroy(gameObject);
+        }
+    }
 }
