@@ -292,6 +292,44 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23807063869020182, guid: ecaf475da6a54ee408d37643d20aee90,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23745650193044960, guid: ecaf475da6a54ee408d37643d20aee90,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052872529992836, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278477541920164, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905000098344080, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895565049373590, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941635557825134, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1455714036813866, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987423887767030, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecaf475da6a54ee408d37643d20aee90, type: 2}
   m_IsPrefabParent: 0
@@ -777,6 +815,7 @@ MonoBehaviour:
   - {fileID: 1952618594}
   - {fileID: 902927492}
   player: {fileID: 1285530348}
+  playersLife: 100
 --- !u!1 &1226113981
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +956,10 @@ Prefab:
     - target: {fileID: 4407670541321434, guid: 45ac3c60434ce7843969bfcd60fcf289, type: 2}
       propertyPath: m_LocalScale.z
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363567171284224, guid: 45ac3c60434ce7843969bfcd60fcf289, type: 2}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45ac3c60434ce7843969bfcd60fcf289, type: 2}

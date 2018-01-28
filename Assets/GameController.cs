@@ -7,26 +7,38 @@ public class GameController : MonoBehaviour {
     public GameObject[] availableEnemies;
     public GameObject[] spawners;
     public GameObject player;
+    public int playersLife;
 
     private int level;
     private int numEnemies;
+    private int enemiesAlive;
     private GameObject[] enemies;
 
     // Use this for initialization
     void Start () {
         level = 1;
-        numEnemies = 1;
+        numEnemies = 10;
         enemies = new GameObject[numEnemies];
         StartCoroutine(CreateEnemies());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (enemies.Length <= 0)
+		if (enemiesAlive <= 0)
         {
             LevelUp();
         }
+        if (playersLife <= 0)
+        {
+            Debug.Log("----------------GAME OVER----------------");
+        }
 	}
+
+    public void EnemyDead()
+    {
+        enemiesAlive--;
+        Debug.Log("Enemy killed, "+enemiesAlive+" enemies remaining.");
+    }
 
     private void LevelUp()
     {
@@ -45,11 +57,13 @@ public class GameController : MonoBehaviour {
     IEnumerator CreateEnemies()
     {
         Debug.Log(numEnemies + " will respawn");
+        enemiesAlive = numEnemies;
         for (int i = 0; i < numEnemies; i++)
         {
             enemies = new GameObject[numEnemies];
-            enemies[i] = Instantiate(availableEnemies[0], spawners[0].transform.position, spawners[0].transform.rotation);
-
+            int randomNumber = Random.Range(0, 3);
+            //Debug.Log("Spawner is: " + randomNumber);
+            enemies[i] = Instantiate(availableEnemies[0], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
             yield return new WaitForSeconds(1);
         }
         

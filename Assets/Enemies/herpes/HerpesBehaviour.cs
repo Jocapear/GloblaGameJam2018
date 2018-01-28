@@ -39,7 +39,7 @@ public class HerpesBehaviour : MonoBehaviour {
         navigation.SetDestination(player.transform.position);
 
         AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
-        Debug.Log(Vector3.Distance(player.transform.position, gameObject.transform.position));
+        //Debug.Log(Vector3.Distance(player.transform.position, gameObject.transform.position));
     }
 
     IEnumerator PutMine()
