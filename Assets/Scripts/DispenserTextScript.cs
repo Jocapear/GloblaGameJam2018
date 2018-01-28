@@ -6,8 +6,7 @@ public class DispenserTextScript : MonoBehaviour {
 	GameObject player;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find("FPSController");
-		SetText("Hola");
+		player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
