@@ -15,11 +15,8 @@ public class DispenserScript : MonoBehaviour {
 	int currentCount,currentLetter;
 	string word;
 	public GameObject text, explotion;
-    ParticleSystem particle;
 	// Use this for initialization
 	void Start () {
-        particle = explotion.GetComponent<ParticleSystem>();
-        particle.Stop();
 		myDictionary.Add (1, new bool[2] {true,false} );
         myDictionary.Add (2, new bool[4] {false,true,true,true} );
         myDictionary.Add (3, new bool[4] {false,true,false,true} );
@@ -82,9 +79,11 @@ public class DispenserScript : MonoBehaviour {
 			}
 			if (currentCount >= code.Length){
 				Debug.Log("Vida, dinero, cosas");
-                particle.Emit(200);
+                GameObject particle = Instantiate(explotion);
+                particle.transform.position = text.transform.position;
 				currentCount = 0;
                 Destroy(gameObject);
+                Destroy(particle, 3.0f);
 			}
 		}
 		else{
