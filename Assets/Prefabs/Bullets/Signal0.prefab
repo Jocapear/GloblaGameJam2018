@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23759428846367762}
   - component: {fileID: 54141804288482528}
   - component: {fileID: 114692220437685316}
-  - component: {fileID: 82633487684568802}
+  - component: {fileID: 82469274421166948}
   m_Layer: 12
   m_Name: Signal0
   m_TagString: Untagged
@@ -101,7 +101,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!82 &82633487684568802
+--- !u!82 &82469274421166948
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -110,7 +110,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e9b1edd514d9be6478b2744af0dd30ba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 92f5aff1a55302a45b8c704479769f9f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
