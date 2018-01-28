@@ -2048,7 +2048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 95416107709167702}
   defaultSpeed: 6
-  attackDistance: 3
+  attackDistance: 10
 --- !u!114 &114591333313498234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2229,7 +2229,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
     public GameObject player;
     public int playersLife;
 
+    public int ammo1;
+    public int ammo2;
     private int level;
     private int numEnemies;
     private int enemiesAlive;
@@ -16,8 +18,10 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        ammo1 = 100;
+        ammo2 = 100;
         level = 1;
-        numEnemies = 10;
+        numEnemies = 3;
         enemies = new GameObject[numEnemies];
         StartCoroutine(CreateEnemies());
 	}
@@ -44,7 +48,7 @@ public class GameController : MonoBehaviour {
     {
         level++;
         StartCoroutine(RestTime());
-        numEnemies = 10 * level;
+        numEnemies = 2*level;
         Debug.Log("Level UP: " + level);
         StartCoroutine(CreateEnemies());
     }
@@ -63,9 +67,8 @@ public class GameController : MonoBehaviour {
             enemies = new GameObject[numEnemies];
             int randomNumber = Random.Range(0, 3);
             //Debug.Log("Spawner is: " + randomNumber);
-            enemies[i] = Instantiate(availableEnemies[0], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
-            yield return new WaitForSeconds(1);
+            enemies[i] = Instantiate(availableEnemies[Random.RandomRange(0,2)], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
+            yield return new WaitForSeconds(2);
         }
-        
     }
 }
