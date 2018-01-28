@@ -14,7 +14,7 @@ public class PlayerDamage : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision c)
+    void OnTriggerEnter(Collider c)
     {
         if(c.gameObject.layer == 10)
         {

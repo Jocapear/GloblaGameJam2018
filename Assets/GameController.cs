@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour
         ammo2 = 100;
         level = 1;
         numEnemies = 3;
+        enemiesAlive = 3;
         enemies = new GameObject[numEnemies];
         StartCoroutine(CreateEnemies());
 	}
@@ -36,6 +38,7 @@ public class GameController : MonoBehaviour
         if (playersLife <= 0)
         {
             Debug.Log("----------------GAME OVER----------------");
+            SceneManager.LoadScene("GameOverScreen", LoadSceneMode.Additive);
         }
 	}
 
@@ -69,7 +72,7 @@ public class GameController : MonoBehaviour
             enemies = new GameObject[numEnemies];
             int randomNumber = Random.Range(0, 3);
             //Debug.Log("Spawner is: " + randomNumber);
-            enemies[i] = Instantiate(availableEnemies[Random.RandomRange(0,2)], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
+            enemies[i] = Instantiate(availableEnemies[Random.Range(0,2)], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
             yield return new WaitForSeconds(2);
 
         }
