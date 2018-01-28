@@ -1,18 +1,21 @@
 fileFormatVersion: 2
-guid: a381a9f501c008240be53a2bd15e28ef
+guid: 1632476636147b44b9a8adf8b5687ea3
+timeCreated: 1517173928
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: arbol_2
-    100002: //RootNode
-    400000: arbol_2
-    400002: //RootNode
+    100000: //RootNode
+    100002: pCube1
+    400000: //RootNode
+    400002: pCube1
     2100000: blinn2SG
-    2100002: blinn1SG
-    2300000: arbol_2
-    3300000: arbol_2
-    4300000: arbol_2
-    9500000: //RootNode
+    2100002: blinn4SG
+    2100004: blinn1SG
+    2100006: blinn3SG
+    2300000: pCube1
+    3300000: pCube1
+    4300000: pCube1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +90,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 0f0b9906ea078274a85f8d594124d4b6
-timeCreated: 1517172013
-=======
-guid: 8e306bc0f379acd45b2aa8b223322df1
-timeCreated: 1517171570
->>>>>>> 9025b6bddcf0d866a4d8b09614f3c529da9b784f
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -19,6 +12,7 @@ ModelImporter:
     2300000: arbol_3
     3300000: arbol_3
     4300000: arbol_3
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -93,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
