@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChancroBehaviour : MonoBehaviour {
+public class SifilisBehaviour : MonoBehaviour {
 
     public Animator anim;
     public float defaultSpeed;
     public double attackDistance;
-
+    
     private Transform enemyModel;
     private bool dead;
     private AudioSource source;
