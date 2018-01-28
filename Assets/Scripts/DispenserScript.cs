@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class DispenserScript : MonoBehaviour {
 
-
+    GameController gc;
 	//DICTIONARY
 	Dictionary<int, bool[]> myDictionary = new Dictionary<int, bool[]>();
-        
+
     //END OF DICTIONARY 
 
-
+    private bool available;
+    public bool ammoType;
 	bool[][] code;
 	int currentCount,currentLetter;
 	string word;
@@ -45,10 +46,11 @@ public class DispenserScript : MonoBehaviour {
         myDictionary.Add (25, new bool[4] {false,true,false,false} );
         myDictionary.Add (26, new bool[4] {false,false,true,true} );
 
-		code = new bool [Random.Range(1,6)][];
-		word = "";
 		FillCode();
-	}
+
+        gc = GameObject.Find("EscenarioGGJ_2018_07").GetComponent<GameController>();
+        available = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -61,8 +63,10 @@ public class DispenserScript : MonoBehaviour {
 
 	}
 
-	void FillCode(){
-		for (int i = 0; i < code.Length; i ++){
+	public void FillCode(){
+        code = new bool[Random.Range(1, 6)][];
+        word = "";
+        for (int i = 0; i < code.Length; i ++){
 			int rdmLetter = Random.Range(1, 27);
 			bool[] tmp = myDictionary[rdmLetter];
 			code[i] = tmp;
@@ -74,7 +78,7 @@ public class DispenserScript : MonoBehaviour {
 	}
 
 	public void EnterSignal(bool signal){
-		if(code[currentCount][currentLetter] == signal){
+		if(code[currentCount][currentLetter] == signal && available){
 			currentLetter++;
 			if (currentLetter >= code[currentCount].Length){
 
@@ -88,7 +92,18 @@ public class DispenserScript : MonoBehaviour {
                 GameObject particle = Instantiate(explotion);
                 particle.transform.position = text.transform.position;
 				currentCount = 0;
-                Destroy(gameObject);
+                if (ammoType)
+                {
+                    Debug.Log(code.Length * 10 + " ammo gained");
+                    gc.ammo1 += code.Length * 10;
+                }
+                else
+                {
+                    Debug.Log(code.Length * 10 + " health gained");
+                    gc.playersLife += code.Length * 10;
+                }
+
+                available = false;
                 Destroy(particle, 3.0f);
 			}
 		}
@@ -168,5 +183,9 @@ public class DispenserScript : MonoBehaviour {
         }
     }
 
+    public void TurnOn()
+    {
+        available = true;
+    }
 
 }

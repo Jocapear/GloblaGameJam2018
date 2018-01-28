@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     public GameObject[] availableEnemies;
     public GameObject[] spawners;
+    public GameObject[] dispensers;
     public GameObject player;
     public int playersLife;
 
@@ -68,6 +69,13 @@ public class GameController : MonoBehaviour
 
     IEnumerator RestTime()
     {
+        for (int i = 0; i < dispensers.Length; i++)
+        {
+            DispenserScript dispenser = dispensers[i].gameObject.GetComponent<DispenserScript>();
+            dispenser.FillCode();
+            dispenser.TurnOn();
+
+        }
         yield return new WaitForSeconds(10);
         StartCoroutine(CreateEnemies());
     }
@@ -80,7 +88,7 @@ public class GameController : MonoBehaviour
             enemies = new GameObject[numEnemies];
             int randomNumber = Random.Range(0, 3);
             //Debug.Log("Spawner is: " + randomNumber);
-            enemies[i] = Instantiate(availableEnemies[Random.Range(0,2)], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
+            enemies[i] = Instantiate(availableEnemies[Random.Range(0,3)], spawners[randomNumber].transform.position, spawners[randomNumber].transform.rotation);
             yield return new WaitForSeconds(2);
         }
 
